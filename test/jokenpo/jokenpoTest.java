@@ -19,10 +19,9 @@ public class jokenpoTest {
 
     @Test 
     public void empateTest(){
-        int jogador1 = 1;
-        int jogador2 = 1;
-        
-        assertTrue(jokenpo.jogar(jogador1, jogador2) == 0);
+        assertEquals(0, jokenpo.jogar(1, 1), "Papel vs Papel deveria empatar");
+        assertEquals(0, jokenpo.jogar(2, 2), "Pedra vs Pedra deveria empatar");
+        assertEquals(0, jokenpo.jogar(3, 3), "Tesoura vs Tesoura deveria empatar");
     }
 
     @Test
@@ -30,7 +29,7 @@ public class jokenpoTest {
         int jogador1 = 3;
         int jogador2 = 1;
 
-        assertTrue(jokenpo.jogar(jogador1, jogador2) == 1);
+        assertEquals(1, jokenpo.jogar(jogador1, jogador2));
     }
 
      @Test
@@ -38,7 +37,7 @@ public class jokenpoTest {
         int jogador1 = 3;
         int jogador2 = 2;
 
-        assertTrue(jokenpo.jogar(jogador1, jogador2) == 2);
+        assertEquals(2, jokenpo.jogar(jogador1, jogador2));
     }
 
     @Test
@@ -46,6 +45,6 @@ public class jokenpoTest {
         int jogador1= 4;
         int jogador2= 2;
 
-        assertTrue(jokenpo.jogar(jogador1, jogador2) == -1);
+        assertEquals(-1, jokenpo.jogar(jogador1, jogador2));
     }
 }
